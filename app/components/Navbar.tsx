@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 const Navbar = () => {
+  
   return (
     <>
 
@@ -15,12 +16,14 @@ const Navbar = () => {
         <div className="space-x-6">
           <Link href="/" className="hover:text-blue-400">Home</Link>
           <Link href="/log" className="hover:text-blue-400">Log</Link>
+
           <Link href="/money" className="hover:text-blue-400">Money</Link>
           <Link href="/photos" className="hover:text-blue-400">Photos</Link>
           <Link href="/videos" className="hover:text-blue-400">Videos</Link>
         </div>
       </div>
     </nav>
+    
   </>
   )
 }
