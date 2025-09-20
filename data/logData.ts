@@ -1,28 +1,46 @@
+// /app/data/logdata.tsx
 
-export const logEntries = [
+export interface LogEntry {
+  day: number;
+  date: string;
+  title: string;
+  content: string;
+}
+
+export const logData: LogEntry[] = [
   {
     day: 1,
-    date: "September 12, 2025",
-    title:"Project created",
-    entry: "🚀 Initialized GAIA as a Next.js app with TypeScript and TailwindCSS. First commit pushed to GitHub. Linked the repo to Vercel and confirmed the demo site runs online. This marks the true starting point of GAIA."
-    
+    date: "Sept 12, 2025",
+    title: "🌱 Day 1 – GAIA Begins",
+    content:
+      "Today I created the foundation for GAIA in Next.js. I used npx create-next-app@latest to scaffold the project. I chose TypeScript, ESLint, and TailwindCSS as the core tools. After some initial errors, I got the app running successfully and deployed a demo version to Vercel. GAIA officially has a heartbeat.",
   },
   {
     day: 2,
-    date: "September 13, 2025",
-    title:"Database setup begins",
-    entry: "Decided on creating a database for GAIA. Explored the options: embed it directly into the log or keep it separate. Created a placeholder for the database separately from the log to keep things clean. "
+    date: "Sept 13, 2025",
+    title: "⚡ Day 2 – Logging the Journey",
+    content:
+      "I focused on creating a Log system for GAIA. I set up a logdata.tsx file to hold entries like this one, which will document every step of the journey. I also discussed whether to keep log data inside the same app or in a separate database. For now, I chose to keep it separate for clarity.",
   },
   {
     day: 3,
-    date: "September 14, 2025",
-    title:"First navigation step",
-    entry: "Started thinking about navigation. Recalled how in the old vanilla JavaScript version, a loader was used to load components into the index page. Explored how similar ideas could work in Next.js. Still at the design stage, but the concept is noted for future development."
+    date: "Sept 14, 2025",
+    title: "📂 Day 3 – The Loader Idea",
+    content:
+      "I asked about building a Loader system like the one I had in vanilla JavaScript, where components load dynamically into the main page. We discovered that in Next.js this can be done differently, using layouts and components instead of manual loaders. I left styling (hamburger menu and mobile-friendly UI) for later steps.",
   },
   {
     day: 4,
-    date: "September 15, 2025",
-    title:"Log component created",
-    entry: "Built the GAIA development log as its own page. Right now it is static and reads from a simple data file. This lets me keep track of every step without worrying about forms or databases yet. The first four entries have been written, marking the foundation of GAIA’s self-documentation."
-  }
+    date: "Sept 15, 2025",
+    title: "🧩 Day 4 – First React Hurdles",
+    content:
+      "I experimented with loading components (like the Log) in Next.js. At first I struggled with React concepts (useState, useEffect) and got errors. Instead of forcing it, I decided to keep it simple and continue with the Log as it is now. The goal became: get something working, refine later. I also confirmed that I want to document each day as a narrative in the Log.",
+  },
+  {
+    day: 5,
+    date: "Sept 16, 2025",
+    title: "🌐 Day 5 – Navbar Added",
+    content:
+      "Today I built the Navbar for GAIA. I created a Navbar.tsx component, added navigation links for Home, Log, Money, Photos, and Videos. Then I included it in the layout.tsx file so it appears on all pages. The Navbar is styled with TailwindCSS (dark background, white text) and uses Next.js <Link> for smooth, instant navigation. GAIA now feels more like a real application.",
+  },
 ];

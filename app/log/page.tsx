@@ -1,5 +1,5 @@
 // app/log/page.tsx
-import { logEntries } from "../../data/logData"; // relative path from app/log to project-root/data
+import { logData } from "../../data/logData"; // relative path from app/log to project-root/data
 
 export default function LogPage() {
   return (
@@ -7,7 +7,7 @@ export default function LogPage() {
       <h1 className="text-3xl font-bold mb-6">GAIA — Development Log</h1>
 
       <section className="space-y-6">
-        {logEntries.map((entry) => (
+        {logData.map((entry) => (
           <article
             key={entry.day}
             className="p-4 border rounded-lg shadow-sm bg-white dark:bg-gray-800"
@@ -16,7 +16,7 @@ export default function LogPage() {
               <h2 className="font-semibold text-lg">{entry.title}</h2>
               <span className="text-sm text-gray-500">{entry.date}</span>
             </div>
-            <p className="mt-2 text-gray-700 dark:text-gray-200">{entry.entry}</p>
+            <p className="mt-2 text-gray-700 dark:text-gray-200">{entry.content}</p>
           </article>
         ))}
       </section>
