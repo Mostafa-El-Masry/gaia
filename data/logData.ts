@@ -43,4 +43,10 @@ export const logData: LogEntry[] = [
     content:
       "Today I built the Navbar for GAIA. I created a Navbar.tsx component, added navigation links for Home, Log, Money, Photos, and Videos. Then I included it in the layout.tsx file so it appears on all pages. The Navbar is styled with TailwindCSS (dark background, white text) and uses Next.js <Link> for smooth, instant navigation. GAIA now feels more like a real application.",
   },
+  {
+  day: 6,
+  date: "2025-09-20",
+  title: "Mobile-Friendly Navbar",
+  content: "Added a responsive navbar that now works on both desktop and mobile. Implemented a hamburger menu using useState to toggle visibility of navigation links. On desktop, links are always visible, while on mobile, they are hidden until the hamburger button is clicked. This makes GAIA easier to use on smaller screens.",
+},
 ];
