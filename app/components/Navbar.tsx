@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <>
 
-    <nav className="bg-gray-900 text-white px-6 py-3 shadow-md">
+    <nav className="bg-gray-900 text-white px-6 py-4 shadow-md">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold hover:text-blue-400">
