@@ -1,39 +1,40 @@
-'use client'
-import { useState } from 'react';
+import Link from "next/link";
 
-
-import Link from 'next/link'
-
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Navbar() {
   return (
-    <>
-
-    <nav className="bg-gray-900 text-white px-6 py-4 shadow-md">
-      <button className='md:hidden block text-gray-800' onClick={() => setIsOpen(!isOpen)}>
-        ☰
-      </button>
-      <div className="max-w-6xl mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="text-xl font-bold hover:text-blue-400">
+    <nav className="bg-gray-900 text-white px-6 py-4 shadow-lg">
+      <div className="container mx-auto flex justify-between items-center">
+        {/* Left side: Logo */}
+        <div className="text-2xl font-bold tracking-wide">
           GAIA
-        </Link>
-        <div className={`md:flex ${isOpen ? 'block' : 'hidden'} `}>
-        {/* Links */}
-        <div className="space-x-6">
-          <Link href="/" className="hover:text-blue-400">Home</Link>
-          <Link href="/log" className="hover:text-blue-400">Log</Link>
-
-          <Link href="/wealth" className="hover:text-blue-400">Wealth</Link>
-          <Link href="/gallery" className="hover:text-blue-400">Gallery</Link>
-          <Link href="/videos" className="hover:text-blue-400">Videos</Link>
         </div>
+
+        {/* Right side: Links */}
+        <div className="space-x-6 hidden md:flex">
+          <Link href="/" className="hover:text-emerald-400 transition">
+            Home
+          </Link>
+          <Link href="/log" className="hover:text-emerald-400 transition">
+            Log
+          </Link>
+          <Link href="/wealth" className="hover:text-emerald-400 transition">
+            Wealth
+          </Link>
+          <Link href="/gallery" className="hover:text-emerald-400 transition">
+            Gallery
+          </Link>
+          <Link href="/videos" className="hover:text-emerald-400 transition">
+            Videos
+          </Link>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button className="text-white hover:text-emerald-400">
+            ☰
+          </button>
         </div>
       </div>
     </nav>
-    
-  </>
-  )
+  );
 }
-
-export default Navbar
