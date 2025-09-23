@@ -45,8 +45,15 @@ export const logData: LogEntry[] = [
   },
   {
   day: 6,
-  date: "2025-09-20",
+  date: "2025-09-17",
   title: "Mobile-Friendly Navbar",
   content: "Added a responsive navbar that now works on both desktop and mobile. Implemented a hamburger menu using useState to toggle visibility of navigation links. On desktop, links are always visible, while on mobile, they are hidden until the hamburger button is clicked. This makes GAIA easier to use on smaller screens.",
 },
+{
+  day: 7,
+  date: "2025-09-18",
+  title: "Placeholder Pages Created",
+  content: "Set up three simple placeholder pages for Money, Photos, and Videos. Linked them from the Navbar so navigation is now functional. Each page currently shows only a title and short description, ready to expand later. No client-side logic yet, keeping everything simple."
+},
+
 ];

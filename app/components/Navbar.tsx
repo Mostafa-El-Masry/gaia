@@ -24,8 +24,8 @@ const Navbar = () => {
           <Link href="/" className="hover:text-blue-400">Home</Link>
           <Link href="/log" className="hover:text-blue-400">Log</Link>
 
-          <Link href="/money" className="hover:text-blue-400">Money</Link>
-          <Link href="/photos" className="hover:text-blue-400">Photos</Link>
+          <Link href="/wealth" className="hover:text-blue-400">Wealth</Link>
+          <Link href="/gallery" className="hover:text-blue-400">Gallery</Link>
           <Link href="/videos" className="hover:text-blue-400">Videos</Link>
         </div>
         </div>
