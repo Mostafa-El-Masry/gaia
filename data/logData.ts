@@ -10,7 +10,7 @@ export type LogEntry = {
 export const logData: LogEntry[] = [
   {
     id: 11,
-    date: "2025-09-24",
+    date: "sept 22, 2025",
     title: "Day 11 – Refactoring the Log with Components",
     content: 
       "Today I refactored the Log page to use a reusable 'LogEntry' component. Instead of writing the markup for each log item directly inside the Log page, I created a component that accepts props: id, date, title, and content. This makes the code cleaner and more maintainable. If I ever change the layout of a log entry (for example, how the date looks), I only need to update it once inside the LogEntry component instead of updating every entry manually. I also practiced passing props and destructuring them inside the component. This improved my understanding of how data flows between components in React/Next.js."
