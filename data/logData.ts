@@ -1,64 +1,71 @@
 // /app/data/logdata.tsx
 
 export interface LogEntry {
-  day: number;
+  id: number;
   date: string;
   title: string;
   content: string;
 }
 
 export const logData: LogEntry[] = [
+  { 
+    id: 9,
+    date: "Sept 20,2025",
+    title: "Day 9 - Building the Log Page UI",
+    content:
+      "Today I created the first version of the Log page in Gaia. I set up a centered layout with a clean container using TailwindCSS, added a main heading, and built placeholder cards for daily log entries. Each card has a title (e.g., “Day 1 – Project Setup”) and a short description. The entries are static for now, but this page is now ready to later connect with logdata.tsx so the content can be updated automatically."
+  },
   {
-    day: 8,
+    id: 8,
     date: "Sept 19, 2025",
     title: "Day 8 – Styling the Navbar",
     content:
       "Today I focused on making the Navbar look professional using TailwindCSS.  I added clean spacing between the links, hover effects to make the navigation more interactive, and adjusted font sizes and weights for readability. I also set up responsive behavior: on desktop the full navigation is visible, while on smaller screens it collapses into a hamburger menu placeholder. This made the navigation feel polished and user-friendly.",
   },
   {
-    day: 7,
+    id: 7,
     date: "Sept 18, 2025",
     title: "Day 7 – Placeholder Pages Created",
     content:
       "Set up three simple placeholder pages for Money, Photos, and Videos. Linked them from the Navbar so navigation is now functional. Each page currently shows only a title and short description, ready to expand later. No client-side logic yet, keeping everything simple.",
   },
   {
-    day: 6,
+    id: 6,
     date: "Sept 17, 2025",
     title: "Day 6 – Mobile-Friendly Navbar",
     content:
       "Added a responsive navbar that now works on both desktop and mobile. Implemented a hamburger menu using useState to toggle visibility of navigation links. On desktop, links are always visible, while on mobile, they are hidden until the hamburger button is clicked. This makes GAIA easier to use on smaller screens.",
   },
   {
-    day: 5,
+    id: 5,
     date: "Sept 16, 2025",
     title: "Day 5 – Navbar Added",
     content:
       "Today I built the Navbar for GAIA. I created a Navbar.tsx component, added navigation links for Home, Log, Money, Photos, and Videos. Then I included it in the layout.tsx file so it appears on all pages. The Navbar is styled with TailwindCSS (dark background, white text) and uses Next.js <Link> for smooth, instant navigation. GAIA now feels more like a real application.",
   },
   {
-    day: 4,
+    id: 4,
     date: "Sept 15, 2025",
     title: "Day 4 – First React Hurdles",
     content:
       "I experimented with loading components (like the Log) in Next.js. At first I struggled with React concepts (useState, useEffect) and got errors. Instead of forcing it, I decided to keep it simple and continue with the Log as it is now. The goal became: get something working, refine later. I also confirmed that I want to document each day as a narrative in the Log.",
   },
   {
-    day: 3,
+    id: 3,
     date: "Sept 14, 2025",
     title: "Day 3 – The Loader Idea",
     content:
       "I asked about building a Loader system like the one I had in vanilla JavaScript, where components load dynamically into the main page. We discovered that in Next.js this can be done differently, using layouts and components instead of manual loaders. I left styling (hamburger menu and mobile-friendly UI) for later steps.",
   },
   {
-    day: 2,
+    id: 2,
     date: "Sept 13, 2025",
     title: "Day 2 – Logging the Journey",
     content:
       "I focused on creating a Log system for GAIA. I set up a logdata.tsx file to hold entries like this one, which will document every step of the journey. I also discussed whether to keep log data inside the same app or in a separate database. For now, I chose to keep it separate for clarity.",
   },
   {
-    day: 1,
+    id: 1,
     date: "Sept 12, 2025",
     title: "Day 1 – GAIA Begins",
     content:
