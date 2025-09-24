@@ -10,11 +10,11 @@ export default function LogPage() {
         {logData.map((entry) => (
           <article
             key={entry.day}
-            className="p-4 border rounded-lg shadow-sm bg-white dark:bg-gray-800"
+            className="p-4 rounded-lg shadow-md bg-white dark:bg-gray-800"
           >
-            <div className="flex justify-between items-baseline">
-              <h2 className="font-semibold text-lg">{entry.title}</h2>
-              <span className="text-sm text-gray-500">{entry.date}</span>
+            <div className="bg-white shadow-md rounded-lg flex max-w-3xl mx-auto p-4 mb-4 justify-between items-baseline">
+              <h2 className="font-semibold text-xl">{entry.title}</h2>
+              <span className="text-sm mt-2 text-gray-500">{entry.date}</span>
             </div>
             <p className="mt-2 text-gray-700 dark:text-gray-200">{entry.content}</p>
           </article>
