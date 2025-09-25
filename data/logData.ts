@@ -9,6 +9,13 @@ export type LogEntry = {
 
 export const logData: LogEntry[] = [
   {
+  id: 12,
+  date: "Sept 23, 2025",
+  title: "Day 12 – Adding a Search Filter to the Log",
+  content: 
+"Today I added a search bar to the Log page. I learned how React state can store the current search term and update it whenever the user types. The input is controlled by state, meaning the text in the input box always matches what React is holding in memory. I also practiced using the .filter() method to only show log entries where the title or content includes the search term. At first, I didn’t fully understand how useState and controlled inputs worked, but after experimenting I built a clearer mental model. Now I can type into the search bar and instantly filter my log history."
+},
+  {
     id: 11,
     date: "sept 22, 2025",
     title: "Day 11 – Refactoring the Log with Components",
