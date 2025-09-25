@@ -1,19 +1,33 @@
 // /app/data/logdata.tsx
 
-export interface LogEntry {
+export type LogEntry = {
   id: number;
   date: string;
   title: string;
   content: string;
-}
+};
 
 export const logData: LogEntry[] = [
-  { 
+  {
+    id: 11,
+    date: "sept 22, 2025",
+    title: "Day 11 – Refactoring the Log with Components",
+    content: 
+      "Today I refactored the Log page to use a reusable 'LogEntry' component. Instead of writing the markup for each log item directly inside the Log page, I created a component that accepts props: id, date, title, and content. This makes the code cleaner and more maintainable. If I ever change the layout of a log entry (for example, how the date looks), I only need to update it once inside the LogEntry component instead of updating every entry manually. I also practiced passing props and destructuring them inside the component. This improved my understanding of how data flows between components in React/Next.js."
+  },
+  {
+    id: 10,
+    date: "Sept 21, 2025",
+    title: "Day 10 - Understanding and Simplifying Props",
+    content:
+      "Today I worked on improving my understanding of how props work in React with TypeScript. Initially, I tried using React.FC with typed props, but it was giving errors in VS Code. After some clarification, I switched to a simpler option: defining the props type and directly annotating the function arguments. This made the component easier to read and avoided unnecessary complexity. The LogEntry component now takes id, date, title, and content props cleanly, without relying on React.FC. This step helped me feel more confident about handling props and simplifying code when needed.",
+  },
+  {
     id: 9,
     date: "Sept 20,2025",
     title: "Day 9 - Building the Log Page UI",
     content:
-      "Today I created the first version of the Log page in Gaia. I set up a centered layout with a clean container using TailwindCSS, added a main heading, and built placeholder cards for daily log entries. Each card has a title (e.g., “Day 1 – Project Setup”) and a short description. The entries are static for now, but this page is now ready to later connect with logdata.tsx so the content can be updated automatically."
+      "Today I created the first version of the Log page in Gaia. I set up a centered layout with a clean container using TailwindCSS, added a main heading, and built placeholder cards for daily log entries. Each card has a title (e.g., “Day 1 – Project Setup”) and a short description. The entries are static for now, but this page is now ready to later connect with logdata.tsx so the content can be updated automatically.",
   },
   {
     id: 8,
