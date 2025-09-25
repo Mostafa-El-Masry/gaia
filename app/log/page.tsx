@@ -19,18 +19,21 @@ const LogPage = () => {
       <h1 className="text-3xl font-bold mb-6 text-center">
         GAIA - Development Log
       </h1>
-      <input
-        type="text"
-        placeholder="Search Logs..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        className="border p-2 rounded mb-4 w-full"
-      />
+      <div className="w-full max-w-md mx-auto">
+        <input
+          type="text"
+          placeholder="Search Logs..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="border border-gray-300 px-4 py-2 shadow-sm focus:border-indigo-500 rounded-lg mb-4 w-full transition"
+        />
+      </div>
 
       
       {filteredLogs.map((log) => (
         <LogEntry
           key={log.id}
+          id={log.id}
           title={log.title}
           date={log.date}
           content={log.content}
