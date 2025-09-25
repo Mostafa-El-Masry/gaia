@@ -11,7 +11,8 @@ const LogPage = () => {
 
   const filteredLogs = logData.filter(entry => 
     entry.title.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
-    entry.content.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
+    entry.content.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+    entry.date.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
   )
   return (
     <main className="container max-w-3xl mx-auto p-6">
