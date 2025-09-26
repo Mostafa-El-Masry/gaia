@@ -13,20 +13,23 @@ export default function LogPage() {
   const normalized = searchTerm.trim().toLowerCase();
 
   // 3) Derive the filtered list from data (no extra state needed)
-  const filteredLogs = normalized
-    ? logData.filter((entry) => {
-        const haystack = (entry.title + " " + entry.content).toLowerCase();
-        return haystack.includes(normalized);
-      })
-    : logData;
+  const filteredLogs = normalized 
+  ? logData.filter((entry) => {
+    const filting = (entry.title + "  " + entry.date + " " + entry.content)
+    return filting.includes(normalized);
+  })
+  : logData;
 
-  // 4) Small derived numbers for the UI
-  const total = logData.length;
-  const count = filteredLogs.length;
+  // 4) Small derived numbers for the 
+  const total = logData.length
+  const count = filteredLogs.length
+
 
   return (
     <main className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">GAIA - Project Log</h1>
+       <h1 className="text-3xl font-bold mb-6 text-center">
+        GAIA - Development Log
+      </h1>
 
       {/* Search box (controlled input) */}
       <input
@@ -34,32 +37,31 @@ export default function LogPage() {
         placeholder="Search logs…"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="border p-2 rounded mb-3 w-full"
+        className="w-full max-w-md block mx-auto mb-4 px-4 py-2 border border-gray-300 rounded-lg text-sm shadow-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-400 transition"
         aria-label="Search logs"
       />
 
       {/* 5) Result info line */}
       <div className="text-sm text-gray-500 mb-4">
         {normalized
-          ? `Showing ${count} result${count !== 1 ? "s" : ""} for "${searchTerm}".`
-          : `Showing all ${total} entries.`}
+        ? `Showing ${count} results${count !== 1 ? "s" : ""} for "${searchTerm}"`: ""}
+
       </div>
 
       {/* 6) Empty state vs. list */}
       {count === 0 ? (
         <div className="rounded-lg border p-6 text-gray-700 bg-white">
-          <p className="font-medium mb-1">No log entries found</p>
+          <p className="font-medium mb-1">No log entries found matching your search terms</p>
           <p className="text-sm">
-            Try a different search term{" "}
+            Try a different search term "{searchTerm}". 
             {/* (Optional) small quality-of-life: clear search */}
             <button
               type="button"
               onClick={() => setSearchTerm("")}
-              className="underline"
+              className="underline px-3"
             >
-              or clear the search
+             Clear The Search Bar
             </button>
-            .
           </p>
         </div>
       ) : (
