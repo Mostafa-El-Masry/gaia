@@ -2,27 +2,46 @@
 
 import { logData } from "@/data/logData";
 import { useState } from "react";
-import LogEntry from "../components/LogEntry";
+import LogEntry from "@/app/components/LogEntry";
 
+
+type SortOrder = "Newest" | "Oldest";
 
 export default function LogPage() {
-  // 1) Search state (same as Day 12)
+  // Search term (controlled input)
   const [searchTerm, setSearchTerm] = useState("");
+  // Date-only sort order
+  const [sortOrder, setSortOrder] = useState<SortOrder>("Newest");
 
-  // 2) Normalize the search string once (trim + lowercase)
+  // Normalize search once (trim + lowercase)
   const normalized = searchTerm.trim().toLowerCase();
 
-  // 3) Derive the filtered list from data (no extra state needed)
-  const filteredLogs = normalized 
-  ? logData.filter((entry) => {
-    const filting = (entry.title + "  " + entry.date + " " + entry.content)
-    return filting.includes(normalized);
-  })
-  : logData;
+  // Filter first (case-insensitive, title + content)
+  const filteredLogs = normalized
+    ? logData.filter((entry) => {
+        const haystack = (entry.title + " " + entry.content).toLowerCase();
+        return haystack.includes(normalized);
+      })
+    : logData;
 
-  // 4) Small derived numbers for the 
-  const total = logData.length
-  const count = filteredLogs.length
+  // Safe date → number (ms). Handles ISO and "September/Sept" formats.
+  const toTime = (d: string) => {
+    const t = new Date(d).getTime();
+    if (!Number.isNaN(t)) return t;
+    // Fallback for uncommon "Sept" abbreviation
+    return new Date(d.replace("Sept ", "Sep ")).getTime();
+  };
+
+  // Sort after filtering (Newest/Oldest)
+  const sortedLogs = [...filteredLogs].sort((a, b) => {
+    const da = toTime(a.date);
+    const db = toTime(b.date);
+    return sortOrder === "Newest" ? db - da : da - db;
+  });
+
+  // const total = logData.length;
+  const count = sortedLogs.length;
+
 
 
   return (
@@ -41,11 +60,23 @@ export default function LogPage() {
         aria-label="Search logs"
       />
 
-      {/* 5) Result info line */}
-      <div className="text-sm text-gray-500 mb-4">
-        {normalized
-        ? `Showing ${count} results${count !== 1 ? "s" : ""} for "${searchTerm}"`: ""}
-
+     {/* (D) NEW: sort dropdown */}
+      <div className="mb-4 flex items-center gap-3">
+        <label htmlFor="sort" className="text-sm text-gray-600">
+          Sort by:
+        </label>
+        <select
+          id="sort"
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value as SortOrder)}
+          className="border p-2 rounded"
+        >
+          <option value="Newest">Newest first</option>
+          <option value="Oldest">Oldest first</option>
+        </select>
+        <span className="text-sm text-gray-500 ml-auto">
+          {normalized ? `Showing ${count} result${count !== 1 ? "s" : ""}` : ""}
+        </span>
       </div>
 
       {/* 6) Empty state vs. list */}
@@ -53,7 +84,7 @@ export default function LogPage() {
         <div className="rounded-lg border p-6 text-gray-700 bg-white">
           <p className="font-medium mb-1">No log entries found matching your search terms</p>
           <p className="text-sm">
-            Try a different search term "{searchTerm}". 
+            Try a different search term {searchTerm}. 
             {/* (Optional) small quality-of-life: clear search */}
             <button
               type="button"
@@ -66,7 +97,7 @@ export default function LogPage() {
         </div>
       ) : (
         <section>
-          {filteredLogs.map((entry) => (
+          {sortedLogs.map((entry) => (
             <LogEntry key={entry.id} {...entry} />
           ))}
         </section>
