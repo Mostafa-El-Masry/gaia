@@ -1,104 +1,237 @@
-// /app/data/logdata.tsx
+// data/logData.ts
 
 export type LogEntry = {
   day: number;
+  date: string; // ISO format
   week: string;
   task: string;
   whatIDid: string;
   filesTouched: string[];
-  link?: string; // optional, your Vercel URL
-  issues?: string; // optional, any blockers
-  decisions?: string; // optional, choices you made
-  learned?: string[]; // optional, quick bullets of what you learned
-  id: number;
-  date: string;
-  title: string;
-  content: string;
+  link?: string;
+  learned: string[];
 };
 
 export const logData: LogEntry[] = [
   {
-    id: 14,
-    date: `September 27, 2025`,
-    title: `Day 14 – Date-Only Sorting & Log UX Polish`,
-    content: `Added date-only sorting to the Log (Newest ↔ Oldest) and kept the search normalization from before. Switched the list to render from sortedLogs, not just filteredLogs. Consolidated the results line (proper pluralization and total count when not searching) and ensured the empty state shows clearly with a quick “Clear the search bar” action. Minor cleanup included confirming the LogEntry import path and simplifying the sort change handler.`,
+    day: 14,
+    date: "2025-09-25",
+    week: "Foundations II",
+    task: "Review & deploy",
+    whatIDid:
+      "Tested all routes, verified Navbar links, checked accessibility, ensured Tailwind polish is consistent, deployed to Vercel.",
+    filesTouched: [
+      "components/Header.tsx",
+      "app/layout.tsx",
+      "components/SectionHeader.tsx",
+      "components/EmptyState.tsx",
+    ],
+    link: "https://your-vercel-url.vercel.app",
+    learned: [
+      "How review days consolidate weekly progress",
+      "Importance of catching small consistency issues",
+      "How to reflect on friction points for later refactor weeks",
+    ],
   },
   {
-    id: 13,
-    date: `September 24, 2025`,
-    title: `Day 13 – Log Filtering and Normalizing`,
-    content: `Added the ability to filter log entries by search terms. Implemented normalization (trimming spaces and making text lowercase) so searches are case-insensitive. Learned how conditional rendering works to show filtered results or a 'no results' message. Today’s focus is not coding new features, but taking time to carefully review and understand the flow: state → normalize → filter → render.`,
+    day: 13,
+    date: "2025-09-24",
+    week: "Foundations II",
+    task: "Add empty states for all pages",
+    whatIDid:
+      "Created EmptyState component and added to every page with unique messages.",
+    filesTouched: ["components/EmptyState.tsx", "all page.tsx files"],
+    learned: [
+      "What empty states are and why they matter",
+      "How reusable components simplify design",
+      "How subtle styling communicates context",
+    ],
   },
   {
-    id: 12,
-    date: `September 23, 2025`,
-    title: `Day 12 – Adding a Search Filter to the Log`,
-    content: `Today I added a search bar to the Log page. I learned how React state can store the current search term and update it whenever the user types. The input is controlled by state, meaning the text in the input box always matches what React is holding in memory. I also practiced using the .filter() method to only show log entries where the title or content includes the search term. At first, I didn’t fully understand how useState and controlled inputs worked, but after experimenting I built a clearer mental model. Now I can type into the search bar and instantly filter my log history.`,
+    day: 12,
+    date: "2025-09-23",
+    week: "Foundations II",
+    task: "Add loading placeholders for Gallery and Videos",
+    whatIDid:
+      "Created loading.tsx in Gallery and Videos to show skeleton UI during data fetch delays.",
+    filesTouched: ["app/gallery/loading.tsx", "app/videos/loading.tsx"],
+    learned: [
+      "How Next.js automatically uses loading.tsx",
+      "Why skeleton UIs improve UX",
+      "How to simulate delay with setTimeout in async pages",
+    ],
   },
   {
-    id: 11,
-    date: `September 22, 2025`,
-    title: `Day 11 – Refactoring the Log with Components`,
-    content: `Today I refactored the Log page to use a reusable 'LogEntry' component. Instead of writing the markup for each log item directly inside the Log page, I created a component that accepts props: id, date, title, and content. This makes the code cleaner and more maintainable. If I ever change the layout of a log entry (for example, how the date looks), I only need to update it once inside the LogEntry component instead of updating every entry manually. I also practiced passing props and destructuring them inside the component. This improved my understanding of how data flows between components in React/Next.js.`,
+    day: 11,
+    date: "2025-09-22",
+    week: "Foundations II",
+    task: "Add shared SectionHeader component",
+    whatIDid:
+      "Created SectionHeader.tsx and replaced duplicated headings in all pages with reusable component.",
+    filesTouched: ["components/SectionHeader.tsx", "all page.tsx files"],
+    learned: [
+      "How props pass data to components",
+      "Why DRY code matters for maintainability",
+      "How semantic HTML improves accessibility",
+    ],
   },
   {
-    id: 10,
-    date: `September 21, 2025`,
-    title: `Day 10 - Understanding and Simplifying Props`,
-    content: `Today I worked on improving my understanding of how props work in React with TypeScript. Initially, I tried using React.FC with typed props, but it was giving errors in VS Code. After some clarification, I switched to a simpler option: defining the props type and directly annotating the function arguments. This made the component easier to read and avoided unnecessary complexity. The LogEntry component now takes id, date, title, and content props cleanly, without relying on React.FC. This step helped me feel more confident about handling props and simplifying code when needed.`,
+    day: 10,
+    date: "2025-09-21",
+    week: "Foundations II",
+    task: "Wire Navbar links to all pages",
+    whatIDid:
+      "Expanded navLinks in Header.tsx to include all 11 routes. Used usePathname to highlight active link.",
+    filesTouched: ["components/Header.tsx"],
+    learned: [
+      "Difference between <a> and <Link> in Next.js",
+      "How to conditionally style active links",
+      "Why aria-current helps accessibility",
+    ],
   },
   {
-    id: 9,
-    date: `September 20,2025`,
-    title: `Day 9 - Building the Log Page UI`,
-    content: `Today I created the first version of the Log page in Gaia. I set up a centered layout with a clean container using TailwindCSS, added a main heading, and built placeholder cards for daily log entries. Each card has a title (e.g., “Day 1 – Project Setup”) and a short description. The entries are static for now, but this page is now ready to later connect with logdata.tsx so the content can be updated automatically.`,
+    day: 9,
+    date: "2025-09-20",
+    week: "Foundations II",
+    task: "Add minimal content blocks",
+    whatIDid:
+      "Expanded placeholders with unique titles, descriptions, and stub buttons for each page.",
+    filesTouched: ["all new page.tsx files"],
+    learned: [
+      "How to make each page unique with minimal content",
+      "Why placeholder text helps navigation feel alive",
+      "Stub actions give visual anchors for later features",
+    ],
   },
   {
-    id: 8,
-    date: `September 19, 2025`,
-    title: `Day 8 – Styling the Navbar`,
-    content: `Today I focused on making the Navbar look professional using TailwindCSS.  I added clean spacing between the links, hover effects to make the navigation more interactive, and adjusted font sizes and weights for readability. I also set up responsive behavior: on desktop the full navigation is visible, while on smaller screens it collapses into a hamburger menu placeholder. This made the navigation feel polished and user-friendly.`,
+    day: 8,
+    date: "2025-09-19",
+    week: "Foundations II",
+    task: "Scaffold all pages (Welcome, Core, Gallery, Videos, Wealth, Abollo, Nexus, Thoughts, Visions, Vault, About)",
+    whatIDid:
+      "Created folders and page.tsx files for 10 new routes, each with a heading, paragraph, and stub button.",
+    filesTouched: [
+      "app/welcome/page.tsx",
+      "app/core/page.tsx",
+      "app/gallery/page.tsx",
+      "app/videos/page.tsx",
+      "app/wealth/page.tsx",
+      "app/abollo/page.tsx",
+      "app/nexus/page.tsx",
+      "app/thoughts/page.tsx",
+      "app/visions/page.tsx",
+      "app/vault/page.tsx",
+      "app/about/page.tsx",
+    ],
+    learned: [
+      "How Next.js App Router maps folders to routes",
+      "Why scaffolding early prevents forgetting sections",
+      "Difference between Home route and other pages",
+    ],
   },
   {
-    id: 7,
-    date: `September 18, 2025`,
-    title: `Day 7 – Placeholder Pages Created`,
-    content: `Set up three simple placeholder pages for Money, Photos, and Videos. Linked them from the Navbar so navigation is now functional. Each page currently shows only a title and short description, ready to expand later. No client-side logic yet, keeping everything simple.`,
+    day: 7,
+    date: "2025-09-18",
+    week: "Foundations I",
+    task: "Review & deploy",
+    whatIDid:
+      "Cleaned up Navbar and Footer, confirmed theme toggle works, tested accessibility, deployed to Vercel.",
+    filesTouched: [
+      "app/layout.tsx",
+      "components/Header.tsx",
+      "components/Footer.tsx",
+    ],
+    learned: [
+      "How to reflect at the end of a dev cycle",
+      "How small review days prevent big problems later",
+      "That deploy tests real-world performance",
+    ],
   },
   {
-    id: 6,
-    date: `September 17, 2025`,
-    title: `Day 6 – Mobile-Friendly Navbar`,
-    content: `Added a responsive navbar that now works on both desktop and mobile. Implemented a hamburger menu using useState to toggle visibility of navigation links. On desktop, links are always visible, while on mobile, they are hidden until the hamburger button is clicked. This makes GAIA easier to use on smaller screens.`,
+    day: 6,
+    date: "2025-09-17",
+    week: "Foundations I",
+    task: "Light Tailwind polish for header/footer",
+    whatIDid:
+      "Added responsive spacing, typography tweaks, and hover effects for Navbar and Footer.",
+    filesTouched: ["components/Header.tsx", "components/Footer.tsx"],
+    learned: [
+      "How Tailwind utility classes style components fast",
+      "Why consistent spacing makes UI feel polished",
+      "That small hover animations improve UX",
+    ],
   },
   {
-    id: 5,
-    date: `September 16, 2025`,
-    title: `Day 5 – Navbar Added`,
-    content: `Today I built the Navbar for GAIA. I created a Navbar.tsx component, added navigation links for Home, Log, Money, Photos, and Videos. Then I included it in the layout.tsx file so it appears on all pages. The Navbar is styled with TailwindCSS (dark background, white text) and uses Next.js <Link> for smooth, instant navigation. GAIA now feels more like a real application.`,
+    day: 5,
+    date: "2025-09-16",
+    week: "Foundations I",
+    task: "Accessibility pass",
+    whatIDid:
+      "Added skip link, aria-current for nav, focus states, and screen reader labels.",
+    filesTouched: ["components/Header.tsx", "app/layout.tsx"],
+    learned: [
+      "What accessibility means in practice",
+      "How aria attributes help screen readers",
+      "Why keyboard navigation must be tested early",
+    ],
   },
   {
-    id: 4,
-    date: `September 15, 2025`,
-    title: `Day 4 – First React Hurdles`,
-    content: `I experimented with loading components (like the Log) in Next.js. At first I struggled with React concepts (useState, useEffect) and got errors. Instead of forcing it, I decided to keep it simple and continue with the Log as it is now. The goal became: get something working, refine later. I also confirmed that I want to document each day as a narrative in the Log.`,
+    day: 4,
+    date: "2025-09-15",
+    week: "Foundations I",
+    task: "Persist theme choice in localStorage",
+    whatIDid:
+      "Added a simple theme toggle that saves light/dark preference locally.",
+    filesTouched: ["components/Header.tsx"],
+    learned: [
+      "How to use localStorage in Next.js",
+      "What hydration errors are and how to avoid them",
+      "That persistence improves UX by remembering settings",
+    ],
   },
   {
-    id: 3,
-    date: `September 14, 2025`,
-    title: `Day 3 – The Loader Idea`,
-    content: `I asked about building a Loader system like the one I had in vanilla JavaScript, where components load dynamically into the main page. We discovered that in Next.js this can be done differently, using layouts and components instead of manual loaders. I left styling (hamburger menu and mobile-friendly UI) for later steps.`,
+    day: 3,
+    date: "2025-09-14",
+    week: "Foundations I",
+    task: "Client interactivity on Navbar",
+    whatIDid:
+      "Made Navbar highlight active route with usePathname, added hover/tap interactivity.",
+    filesTouched: ["components/Header.tsx"],
+    learned: [
+      "What hooks are in React",
+      "How usePathname works in Next.js",
+      "Difference between static vs. interactive components",
+    ],
   },
   {
-    id: 2,
-    date: `September 13, 2025`,
-    title: `Day 2 – Logging the Journey`,
-    content: `I focused on creating a Log system for GAIA. I set up a logdata.tsx file to hold entries like this one, which will document every step of the journey. I also discussed whether to keep log data inside the same app or in a separate database. For now, I chose to keep it separate for clarity.`,
+    day: 2,
+    date: "2025-09-13",
+    week: "Foundations I",
+    task: "Add shared Header and Footer",
+    whatIDid:
+      "Created Header.tsx with Navbar and Footer.tsx with basic layout. Added to root layout.",
+    filesTouched: [
+      "components/Header.tsx",
+      "components/Footer.tsx",
+      "app/layout.tsx",
+    ],
+    learned: [
+      "What a shared layout is in Next.js",
+      "How children get injected into layout",
+      "That components keep code reusable",
+    ],
   },
   {
-    id: 1,
-    date: `September 12, 2025`,
-    title: `Day 1 – GAIA Begins`,
-    content: `Today I created the foundation for GAIA in Next.js. I used npx create-next-app@latest to scaffold the project. I chose TypeScript, ESLint, and TailwindCSS as the core tools. After some initial errors, I got the app running successfully and deployed a demo version to Vercel. GAIA officially has a heartbeat.`,
+    day: 1,
+    date: "2025-09-12",
+    week: "Foundations I",
+    task: "Create Next app, Git + Vercel",
+    whatIDid:
+      "Initialized Next.js app, pushed to GitHub, linked with Vercel, confirmed deployment works.",
+    filesTouched: ["package.json", "app/layout.tsx", "app/page.tsx"],
+    learned: [
+      "How to bootstrap a Next.js project",
+      "Why Git is needed for version control",
+      "How Vercel auto-deploy works with GitHub",
+    ],
   },
 ];

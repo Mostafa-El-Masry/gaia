@@ -4,7 +4,6 @@ import { logData } from "@/data/logData";
 import { useState } from "react";
 import LogEntry from "@/app/components/LogEntry";
 
-
 type SortOrder = "Newest" | "Oldest";
 
 export default function LogPage() {
@@ -19,7 +18,7 @@ export default function LogPage() {
   // Filter first (case-insensitive, title + content)
   const filteredLogs = normalized
     ? logData.filter((entry) => {
-        const haystack = (entry.title + " " + entry.content).toLowerCase();
+        const haystack = { ...entry }.toString().toLowerCase();
         return haystack.includes(normalized);
       })
     : logData;
@@ -42,11 +41,9 @@ export default function LogPage() {
   // const total = logData.length;
   const count = sortedLogs.length;
 
-
-
   return (
     <main className="max-w-3xl mx-auto p-6">
-       <h1 className="text-3xl font-bold mb-6 text-center">
+      <h1 className="text-3xl font-bold mb-6 text-center">
         GAIA - Development Log
       </h1>
 
@@ -60,7 +57,7 @@ export default function LogPage() {
         aria-label="Search logs"
       />
 
-     {/* (D) NEW: sort dropdown */}
+      {/* (D) NEW: sort dropdown */}
       <div className="mb-4 flex items-center gap-3">
         <label htmlFor="sort" className="text-sm text-gray-600">
           Sort by:
@@ -82,23 +79,25 @@ export default function LogPage() {
       {/* 6) Empty state vs. list */}
       {count === 0 ? (
         <div className="rounded-lg border p-6 text-gray-700 bg-white">
-          <p className="font-medium mb-1">No log entries found matching your search terms</p>
+          <p className="font-medium mb-1">
+            No log entries found matching your search terms
+          </p>
           <p className="text-sm">
-            Try a different search term {searchTerm}. 
+            Try a different search term {searchTerm}.
             {/* (Optional) small quality-of-life: clear search */}
             <button
               type="button"
               onClick={() => setSearchTerm("")}
               className="underline px-3"
             >
-             Clear The Search Bar
+              Clear The Search Bar
             </button>
           </p>
         </div>
       ) : (
         <section>
           {sortedLogs.map((entry) => (
-            <LogEntry key={entry.id} {...entry} />
+            <LogEntry key={entry.day} {...entry} />
           ))}
         </section>
       )}
