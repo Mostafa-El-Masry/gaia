@@ -1,9 +1,11 @@
+import SectionHeader from "../components/SectionHeader";
+
 export default function CorePage() {
   return (
-    <section className="p-6">
-      <h1 className="text-2xl font-bold">Thoughts</h1>
-      <p>This is the Thoughts page of GAIA.</p>
-      <button className="border p-2 mt-4">Stub Action</button>
-    </section>
+<SectionHeader
+  title="Thoughts"
+  description="Quick jot-down notes and ideas."
+/>
+
   );
 }
