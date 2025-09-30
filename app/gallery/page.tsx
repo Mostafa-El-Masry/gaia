@@ -1,9 +1,10 @@
-// app/photos/page.tsx
-export default function galleryPage() {
+export default function GalleryPage() {
   return (
-    <main className="max-w-3xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-2">Gallery</h1>
-      <p className="text-gray-600">Placeholder for the Photo Library (will load gallery later).</p>
-    </main>
+    <section className="p-6 space-y-4">
+      <h1 className="text-2xl font-bold">Gallery</h1>
+      <p>Your visual library. Here you’ll store images, artwork, and memories.</p>
+      <p className="text-gray-600">Later, this page will support filters, tags, and previews.</p>
+      <button className="border px-4 py-2 rounded">Add Image</button>
+    </section>
   );
 }

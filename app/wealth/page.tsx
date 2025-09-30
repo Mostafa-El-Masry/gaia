@@ -1,9 +1,10 @@
-// app/money/page.tsx
-export default function wealthPage() {
+export default function WealthPage() {
   return (
-    <main className="max-w-3xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-2">Money</h1>
-      <p className="text-gray-600">Placeholder for the Wealth Calculator (coming soon).</p>
-    </main>
+    <section className="p-6 space-y-4">
+      <h1 className="text-2xl font-bold">Wealth</h1>
+      <p>Track your finances and projections here.</p>
+      <p className="text-gray-600">Future versions will include calculators, charts, and DB storage.</p>
+      <button className="border px-4 py-2 rounded">Start Calculation</button>
+    </section>
   );
 }

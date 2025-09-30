@@ -12,6 +12,7 @@ export default function Navbar() {
     { name: "Wealth", href: "/wealth" },
     { name: "Gallery", href: "/gallery" },
     { name: "Videos", href: "/videos" },
+    { name: "Apollo", href: "/apollo"},
   ];
 
   return (
