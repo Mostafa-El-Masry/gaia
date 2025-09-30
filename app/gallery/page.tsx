@@ -1,6 +1,7 @@
 import SectionHeader from "../components/SectionHeader";
 
 export default function GalleryPage() {
+  
   return (
     <SectionHeader
   title="Gallery"
