@@ -3,7 +3,10 @@
 export default function Home() {
   return (
     <>
-      <h1>GAIA</h1>
+      <main style={{ padding: "2rem" }}>
+      <h1>Welcome to GAIA</h1>
+      <p>Your personal AI hub.</p>
+    </main>
     </>
   );
 }

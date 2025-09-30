@@ -1,1 +1,46 @@
 @import "tailwindcss";
+/* app/globals.css */
+
+/* A tiny normalization for consistent sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Basic body defaults to keep things readable */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+}
+
+/* A simple centered container with a maximum width */
+:root {
+  --container-max: 960px;  /* a comfortable reading width */
+  --container-pad: 16px;   /* small side padding */
+}
+
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;            /* centers the block */
+  padding-inline: var(--container-pad);
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+/* Default theme (light) */
+body[data-theme="light"] {
+  background: #ffffff;
+  color: #111111;
+}
+
+/* Dark theme */
+body[data-theme="dark"] {
+  background: #111111;
+  color: #f3f3f3;
+}

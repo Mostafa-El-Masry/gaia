@@ -1,6 +1,15 @@
 // /app/data/logdata.tsx
 
 export type LogEntry = {
+  day: number;
+  week: string;
+  task: string;
+  whatIDid: string;
+  filesTouched: string[];
+  link?: string; // optional, your Vercel URL
+  issues?: string; // optional, any blockers
+  decisions?: string; // optional, choices you made
+  learned?: string[]; // optional, quick bullets of what you learned
   id: number;
   date: string;
   title: string;

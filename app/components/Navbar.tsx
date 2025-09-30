@@ -1,6 +1,19 @@
+'use client';
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Log", href: "/log" },
+    { name: "Wealth", href: "/wealth" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Videos", href: "/videos" },
+  ];
+
   return (
     <nav className="bg-gray-900 text-white px-6 py-4 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
@@ -11,23 +24,20 @@ export default function Navbar() {
 
         {/* Right side: Links */}
         <div className="space-x-6 hidden md:flex">
-          <Link href="/" className="hover:text-emerald-400 transition">
-            Home
-          </Link>
-          <Link href="/log" className="hover:text-emerald-400 transition">
-            Log
-          </Link>
-          <Link href="/wealth" className="hover:text-emerald-400 transition">
-            Wealth
-          </Link>
-          <Link href="/gallery" className="hover:text-emerald-400 transition">
-            Gallery
-          </Link>
-          <Link href="/videos" className="hover:text-emerald-400 transition">
-            Videos
-          </Link>
+          {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                  <Link
+                    href={link.href}
+                    className={`hover:text-emerald-400 transition ${isActive ? "underline font-bold cursor:pointer text-emerald-300" : ""}`}
+                    key={link.href}>
+                    {link.name}
+                  </Link>
+              );
+            })}
+            
         </div>
-
+<ThemeToggle />
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button className="text-white hover:text-emerald-400">
