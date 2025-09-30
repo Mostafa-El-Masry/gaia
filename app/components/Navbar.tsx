@@ -13,6 +13,10 @@ export default function Navbar() {
     { name: "Gallery", href: "/gallery" },
     { name: "Videos", href: "/videos" },
     { name: "Apollo", href: "/apollo"},
+    { name: "Nexus", href: "/nexus" },
+    { name: "Thoughts", href: "/thoughts" },
+    { name: "Visions", href: "/visions" },
+    { name: "Vault", href: "/vault" },
   ];
 
   return (
