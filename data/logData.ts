@@ -13,6 +13,102 @@ export type LogEntry = {
 
 export const logData: LogEntry[] = [
   {
+    day: 19,
+    date: "2025-09-30",
+    week: "Foundations III",
+    task: "Add error boundaries for friendly error UI",
+    whatIDid:
+      "Created an ErrorBoundary component that catches runtime errors and shows a friendly fallback message instead of breaking the whole app.",
+    filesTouched: ["components/ErrorBoundary.tsx", "app/layout.tsx"],
+    learned: [
+      "How to build an ErrorBoundary class component",
+      "How to display a fallback UI safely when errors occur",
+    ],
+  },
+  {
+    day: 18,
+    date: "2025-09-29",
+    week: "Foundations III",
+    task: "Persist one trivial preference per page in localStorage",
+    whatIDid:
+      "Created a reusable useLocalStorage hook to store and retrieve simple user preferences like 'dense' vs 'comfy' layout. Applied it across pages so preferences persist between sessions.",
+    filesTouched: [
+      "components/useLocalStorage.ts",
+      "app/gallery/page.tsx",
+      "app/videos/page.tsx",
+      "app/core/page.tsx",
+      "app/wealth/page.tsx",
+    ],
+    learned: [
+      "How to read and write persistent data using localStorage in React",
+      "How to create reusable hooks for shared logic",
+      "How to sync state changes to browser storage safely in Next.js",
+    ],
+  },
+  {
+    day: 17,
+    date: "2025-09-28",
+    week: "Foundations III",
+    task: "Keyboard support for modals (Esc + Tab loop)",
+    whatIDid:
+      "Enhanced the Modal component to support keyboard accessibility. Implemented Esc key to close, focus trapping with Tab/Shift+Tab, and restored focus to the triggering element.",
+    filesTouched: [
+      "components/Modal.tsx",
+      "app/gallery/page.tsx",
+      "app/videos/page.tsx",
+    ],
+    learned: [
+      "How to use useEffect to listen for keyboard events",
+      "How to trap focus inside a modal using refs and event handlers",
+      "How to restore focus for accessibility after modal closes",
+    ],
+  },
+  {
+    day: 16,
+    date: "2025-09-27",
+    week: "Foundations III",
+    task: "Add simple modals (Gallery & Videos previews, no DB)",
+    whatIDid:
+      "Built a reusable Modal component with open/close logic and backdrop click-to-close. Integrated basic preview modals for Gallery and Videos pages.",
+    filesTouched: [
+      "components/Modal.tsx",
+      "app/gallery/page.tsx",
+      "app/videos/page.tsx",
+    ],
+    learned: [
+      "How to create controlled open/close modals using useState",
+      "How to pass children as modal content for flexible previews",
+      "Why backdrop click-to-close improves user experience",
+    ],
+  },
+  {
+    day: 15,
+    date: "2025-09-26",
+    week: "Foundations III",
+    task: "Add tiny interactivity per page (accordion/toggle)",
+    whatIDid:
+      "Added small interactive elements across all scaffolded pages using a reusable SimpleAccordion component. Each page now has a working toggle or accordion powered by useState.",
+    filesTouched: [
+      "components/SimpleAccordion.tsx",
+      "app/welcome/page.tsx",
+      "app/core/page.tsx",
+      "app/gallery/page.tsx",
+      "app/videos/page.tsx",
+      "app/wealth/page.tsx",
+      "app/abollo/page.tsx",
+      "app/nexus/page.tsx",
+      "app/thoughts/page.tsx",
+      "app/visions/page.tsx",
+      "app/vault/page.tsx",
+      "app/about/page.tsx",
+    ],
+    learned: [
+      "How to manage UI state using useState",
+      "How to create reusable components that accept props",
+      "How to apply interactivity uniformly across multiple pages",
+    ],
+  },
+  {
     day: 14,
     date: "2025-09-25",
     week: "Foundations II",

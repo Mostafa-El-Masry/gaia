@@ -3,9 +3,11 @@ import { useState } from "react";
 import EmptyState from "../components/EmptyState";
 import Modal from "../components/Modal";
 import SectionHeader from "../components/SectionHeader";
+import { useLocalStorage } from "../components/useLocalStorage";
 
 export default function GalleryPage() {
   const [open, setOpen] = useState(false);
+  const [dense, setDense] = useLocalStorage<boolean>("galleryDense", false);
 
   return (
     <>
@@ -34,6 +36,22 @@ export default function GalleryPage() {
           come in Media/DB weeks.
         </p>
       </Modal>
+      <main
+        className={`max-w-2xl mx-auto py-10 px-4 ${
+          dense ? "space-y-1" : "space-y-4"
+        }`}
+      >
+        <button
+          onClick={() => setDense(!dense)}
+          className="px-3 py-1 rounded bg-blue-600 text-white hover:bg-blue-700 mb-4"
+        >
+          {dense ? "Switch to Comfy" : "Switch to Dense"}
+        </button>
+
+        <div className="border rounded p-2">Item 1</div>
+        <div className="border rounded p-2">Item 2</div>
+        <div className="border rounded p-2">Item 3</div>
+      </main>
     </>
   );
 }
