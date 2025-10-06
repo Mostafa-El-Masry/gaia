@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ErrorBoundary from "./components/ErrorBoundary";
+import ClientShortcutsWrapper from "./components/ClientShortcutsWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +40,10 @@ export default function RootLayout({
           id="content"
           style={{ paddingBlock: "1.25rem" }}
         >
-          <ErrorBoundary>{children}</ErrorBoundary>
+          <ErrorBoundary>
+            {" "}
+            <ClientShortcutsWrapper>{children}</ClientShortcutsWrapper>
+          </ErrorBoundary>
         </main>
         <Footer />
       </body>
