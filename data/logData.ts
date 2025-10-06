@@ -9,7 +9,7 @@ export type LogEntry = {
   filesTouched: string[];
   link?: string;
   learned: string[];
-  status?: "done" | "in-progress" | "blocked";
+  status?: "done" | "in-progress" | "Holded";
 };
 
 export const logData: LogEntry[] = [
