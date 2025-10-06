@@ -25,7 +25,7 @@ export const logData: LogEntry[] = [
       "How to extend components with new props",
       "How to use Tailwind conditional classes for dynamic UI"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 20,
@@ -38,7 +38,7 @@ export const logData: LogEntry[] = [
       "How to send form data to an API route",
       "How to handle client-side responses and display messages"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 19,
@@ -51,7 +51,7 @@ export const logData: LogEntry[] = [
       "How React Error Boundaries work",
       "How to show fallback UIs safely"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 18,
@@ -64,7 +64,7 @@ export const logData: LogEntry[] = [
       "How to manage persistent data in localStorage",
       "How to write reusable hooks"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 17,
@@ -77,7 +77,7 @@ export const logData: LogEntry[] = [
       "How to listen for keyboard events with useEffect",
       "How to trap focus in modals"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 16,
@@ -90,7 +90,7 @@ export const logData: LogEntry[] = [
       "How to build controlled modals",
       "How to pass dynamic children for flexibility"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 15,
@@ -103,7 +103,7 @@ export const logData: LogEntry[] = [
       "How to manage UI state with useState",
       "How to apply interaction patterns across pages"
     ],
-    status: "done"
+    status: "Done"
   },
 
   // Week 2 — Foundations II
@@ -118,7 +118,7 @@ export const logData: LogEntry[] = [
       "How to review UI consistency",
       "How to deploy with confidence"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 13,
@@ -131,7 +131,7 @@ export const logData: LogEntry[] = [
       "How to show empty state messages cleanly",
       "How to improve UX when no data is present"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 12,
@@ -144,7 +144,7 @@ export const logData: LogEntry[] = [
       "How to use suspense-like placeholders",
       "How to structure loading UX"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 11,
@@ -157,7 +157,7 @@ export const logData: LogEntry[] = [
       "How to reuse components for consistency",
       "How to use props to control appearance"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 10,
@@ -170,7 +170,7 @@ export const logData: LogEntry[] = [
       "How to handle active routes with usePathname",
       "How to structure navigation"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 9,
@@ -183,7 +183,7 @@ export const logData: LogEntry[] = [
       "How to scaffold multiple pages quickly",
       "How to ensure route consistency"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 8,
@@ -196,7 +196,7 @@ export const logData: LogEntry[] = [
       "How to scaffold pages in Next.js",
       "How to define route-based page files"
     ],
-    status: "done"
+    status: "Done"
   },
 
   // Week 1 — Foundations I
@@ -211,7 +211,7 @@ export const logData: LogEntry[] = [
       "How to deploy Next.js apps to Vercel",
       "How to verify layouts and responsive behavior"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 6,
@@ -224,7 +224,7 @@ export const logData: LogEntry[] = [
       "How to use Tailwind utility classes effectively",
       "How to style components responsively"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 5,
@@ -237,7 +237,7 @@ export const logData: LogEntry[] = [
       "How to improve accessibility using ARIA roles",
       "How to design for keyboard navigation"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 4,
@@ -250,7 +250,7 @@ export const logData: LogEntry[] = [
       "How to use useEffect for side effects",
       "How to persist state in localStorage"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 3,
@@ -263,7 +263,7 @@ export const logData: LogEntry[] = [
       "How to detect the active route in Next.js",
       "How to add basic interactivity with hooks"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 2,
@@ -276,7 +276,7 @@ export const logData: LogEntry[] = [
       "How Next.js layouts work",
       "How to compose reusable page structure"
     ],
-    status: "done"
+    status: "Done"
   },
   {
     day: 1,
@@ -289,6 +289,6 @@ export const logData: LogEntry[] = [
       "How to set up a Next.js app from scratch",
       "How to deploy to Vercel"
     ],
-    status: "done"
+    status: "Done"
   }
 ];
