@@ -16,7 +16,7 @@ export const logData: LogEntry[] = [
   // Week 3 — Foundations III
   {
     day: 21,
-    date: "2025-10-01",
+    date: "2025-10-02",
     week: "Foundations III",
     task: "Weekly review and add status tags to logs",
     whatIDid: "Reviewed all progress for Week 3 and added a new status badge feature in the LogEntry component to mark tasks as Done, In Progress, or Blocked.",
@@ -29,7 +29,7 @@ export const logData: LogEntry[] = [
   },
   {
     day: 20,
-    date: "2025-09-31",
+    date: "2025-10-01",
     week: "Foundations III",
     task: "Add a simple form that submits data to a mock API route",
     whatIDid: "Built a POST API route at /api/feedback and added a form to the About page. Used fetch() to send and handle success/failure messages.",
