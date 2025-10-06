@@ -10,6 +10,7 @@ type LogEntryProps = {
   filesTouched: string[];
   link?: string;
   learned: string[];
+  status?: "done" | "in-progress" | "blocked";
 };
 
 export default function LogEntry({
@@ -21,6 +22,7 @@ export default function LogEntry({
   filesTouched,
   link,
   learned,
+  status
 }: LogEntryProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -34,6 +36,24 @@ export default function LogEntry({
         <div className="flex flex-col items-start">
           <span className="text-lg font-bold text-gray-900 dark:text-gray-100">
             Day {day} — {week}
+            {status && (
+  <span
+    className={`text-xs px-2 py-1 rounded ${
+      status === "done"
+        ? "bg-green-100 text-green-800"
+        : status === "in-progress"
+        ? "bg-yellow-100 text-yellow-800"
+        : "bg-red-100 text-red-800"
+    }`}
+  >
+    {status === "done"
+      ? "✅ Done"
+      : status === "in-progress"
+      ? "🕓 In Progress"
+      : "⚠️ Blocked"}
+  </span>
+)}
+
           </span>
           <span className="text-md max-w-xl text-blue-600 dark:text-emerald-500">
             {task}

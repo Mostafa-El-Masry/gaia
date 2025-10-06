@@ -9,325 +9,286 @@ export type LogEntry = {
   filesTouched: string[];
   link?: string;
   learned: string[];
+  status?: "done" | "in-progress" | "blocked";
 };
 
 export const logData: LogEntry[] = [
+  // Week 3 — Foundations III
+  {
+    day: 21,
+    date: "2025-10-01",
+    week: "Foundations III",
+    task: "Weekly review and add status tags to logs",
+    whatIDid: "Reviewed all progress for Week 3 and added a new status badge feature in the LogEntry component to mark tasks as Done, In Progress, or Blocked.",
+    filesTouched: ["components/LogEntry.tsx", "data/logData.ts"],
+    learned: [
+      "How to extend components with new props",
+      "How to use Tailwind conditional classes for dynamic UI"
+    ],
+    status: "done"
+  },
+  {
+    day: 20,
+    date: "2025-09-31",
+    week: "Foundations III",
+    task: "Add a simple form that submits data to a mock API route",
+    whatIDid: "Built a POST API route at /api/feedback and added a form to the About page. Used fetch() to send and handle success/failure messages.",
+    filesTouched: ["app/api/feedback/route.ts", "app/about/page.tsx"],
+    learned: [
+      "How to send form data to an API route",
+      "How to handle client-side responses and display messages"
+    ],
+    status: "done"
+  },
   {
     day: 19,
     date: "2025-09-30",
     week: "Foundations III",
     task: "Add error boundaries for friendly error UI",
-    whatIDid:
-      "Created an ErrorBoundary component that catches runtime errors and shows a friendly fallback message instead of breaking the whole app.",
+    whatIDid: "Created an ErrorBoundary component to catch runtime errors and display a friendly fallback instead of a crash.",
     filesTouched: ["components/ErrorBoundary.tsx", "app/layout.tsx"],
     learned: [
-      "How to build an ErrorBoundary class component",
-      "How to display a fallback UI safely when errors occur",
+      "How React Error Boundaries work",
+      "How to show fallback UIs safely"
     ],
+    status: "done"
   },
   {
     day: 18,
     date: "2025-09-29",
     week: "Foundations III",
     task: "Persist one trivial preference per page in localStorage",
-    whatIDid:
-      "Created a reusable useLocalStorage hook to store and retrieve simple user preferences like 'dense' vs 'comfy' layout. Applied it across pages so preferences persist between sessions.",
-    filesTouched: [
-      "components/useLocalStorage.ts",
-      "app/gallery/page.tsx",
-      "app/videos/page.tsx",
-      "app/core/page.tsx",
-      "app/wealth/page.tsx",
-    ],
+    whatIDid: "Added a useLocalStorage hook to remember page layout preferences (dense/comfy). Applied it across several pages for persistence.",
+    filesTouched: ["components/useLocalStorage.ts", "app/gallery/page.tsx", "app/videos/page.tsx", "app/core/page.tsx", "app/wealth/page.tsx"],
     learned: [
-      "How to read and write persistent data using localStorage in React",
-      "How to create reusable hooks for shared logic",
-      "How to sync state changes to browser storage safely in Next.js",
+      "How to manage persistent data in localStorage",
+      "How to write reusable hooks"
     ],
+    status: "done"
   },
   {
     day: 17,
     date: "2025-09-28",
     week: "Foundations III",
-    task: "Keyboard support for modals (Esc + Tab loop)",
-    whatIDid:
-      "Enhanced the Modal component to support keyboard accessibility. Implemented Esc key to close, focus trapping with Tab/Shift+Tab, and restored focus to the triggering element.",
-    filesTouched: [
-      "components/Modal.tsx",
-      "app/gallery/page.tsx",
-      "app/videos/page.tsx",
-    ],
+    task: "Add keyboard support for modals (Esc + Tab loop)",
+    whatIDid: "Improved modal accessibility with Esc-to-close, focus trapping, and returning focus to the opener.",
+    filesTouched: ["components/Modal.tsx", "app/gallery/page.tsx", "app/videos/page.tsx"],
     learned: [
-      "How to use useEffect to listen for keyboard events",
-      "How to trap focus inside a modal using refs and event handlers",
-      "How to restore focus for accessibility after modal closes",
+      "How to listen for keyboard events with useEffect",
+      "How to trap focus in modals"
     ],
+    status: "done"
   },
   {
     day: 16,
     date: "2025-09-27",
     week: "Foundations III",
-    task: "Add simple modals (Gallery & Videos previews, no DB)",
-    whatIDid:
-      "Built a reusable Modal component with open/close logic and backdrop click-to-close. Integrated basic preview modals for Gallery and Videos pages.",
-    filesTouched: [
-      "components/Modal.tsx",
-      "app/gallery/page.tsx",
-      "app/videos/page.tsx",
-    ],
+    task: "Add simple modals for Gallery and Videos previews",
+    whatIDid: "Built a reusable Modal component and used it for Gallery and Videos previews with click and backdrop close.",
+    filesTouched: ["components/Modal.tsx", "app/gallery/page.tsx", "app/videos/page.tsx"],
     learned: [
-      "How to create controlled open/close modals using useState",
-      "How to pass children as modal content for flexible previews",
-      "Why backdrop click-to-close improves user experience",
+      "How to build controlled modals",
+      "How to pass dynamic children for flexibility"
     ],
+    status: "done"
   },
   {
     day: 15,
     date: "2025-09-26",
     week: "Foundations III",
-    task: "Add tiny interactivity per page (accordion/toggle)",
-    whatIDid:
-      "Added small interactive elements across all scaffolded pages using a reusable SimpleAccordion component. Each page now has a working toggle or accordion powered by useState.",
-    filesTouched: [
-      "components/SimpleAccordion.tsx",
-      "app/welcome/page.tsx",
-      "app/core/page.tsx",
-      "app/gallery/page.tsx",
-      "app/videos/page.tsx",
-      "app/wealth/page.tsx",
-      "app/abollo/page.tsx",
-      "app/nexus/page.tsx",
-      "app/thoughts/page.tsx",
-      "app/visions/page.tsx",
-      "app/vault/page.tsx",
-      "app/about/page.tsx",
-    ],
+    task: "Add small interactivity per page (accordion/toggle)",
+    whatIDid: "Added SimpleAccordion component with toggles on all pages using useState for basic interactivity.",
+    filesTouched: ["components/SimpleAccordion.tsx", "app/welcome/page.tsx", "app/core/page.tsx", "app/gallery/page.tsx", "app/videos/page.tsx", "app/wealth/page.tsx", "app/abollo/page.tsx", "app/nexus/page.tsx", "app/thoughts/page.tsx", "app/visions/page.tsx", "app/vault/page.tsx", "app/about/page.tsx"],
     learned: [
-      "How to manage UI state using useState",
-      "How to create reusable components that accept props",
-      "How to apply interactivity uniformly across multiple pages",
+      "How to manage UI state with useState",
+      "How to apply interaction patterns across pages"
     ],
+    status: "done"
   },
+
+  // Week 2 — Foundations II
   {
     day: 14,
     date: "2025-09-25",
     week: "Foundations II",
-    task: "Review & deploy",
-    whatIDid:
-      "Tested all routes, verified Navbar links, checked accessibility, ensured Tailwind polish is consistent, deployed to Vercel.",
-    filesTouched: [
-      "components/Header.tsx",
-      "app/layout.tsx",
-      "components/SectionHeader.tsx",
-      "components/EmptyState.tsx",
-    ],
-    link: "https://your-vercel-url.vercel.app",
+    task: "Review and polish Week 2 work",
+    whatIDid: "Reviewed all new pages, fixed spacing, added consistent empty states and deployment verification.",
+    filesTouched: ["app/layout.tsx", "app/*/page.tsx"],
     learned: [
-      "How review days consolidate weekly progress",
-      "Importance of catching small consistency issues",
-      "How to reflect on friction points for later refactor weeks",
+      "How to review UI consistency",
+      "How to deploy with confidence"
     ],
+    status: "done"
   },
   {
     day: 13,
     date: "2025-09-24",
     week: "Foundations II",
-    task: "Add empty states for all pages",
-    whatIDid:
-      "Created EmptyState component and added to every page with unique messages.",
-    filesTouched: ["components/EmptyState.tsx", "all page.tsx files"],
+    task: "Empty states for each page",
+    whatIDid: "Added placeholder text and empty-state components across all main pages.",
+    filesTouched: ["components/EmptyState.tsx", "app/*/page.tsx"],
     learned: [
-      "What empty states are and why they matter",
-      "How reusable components simplify design",
-      "How subtle styling communicates context",
+      "How to show empty state messages cleanly",
+      "How to improve UX when no data is present"
     ],
+    status: "done"
   },
   {
     day: 12,
     date: "2025-09-23",
     week: "Foundations II",
-    task: "Add loading placeholders for Gallery and Videos",
-    whatIDid:
-      "Created loading.tsx in Gallery and Videos to show skeleton UI during data fetch delays.",
-    filesTouched: ["app/gallery/loading.tsx", "app/videos/loading.tsx"],
+    task: "Local loading placeholders",
+    whatIDid: "Created simple loading placeholders for Gallery and Videos pages to simulate content loading.",
+    filesTouched: ["app/gallery/page.tsx", "app/videos/page.tsx"],
     learned: [
-      "How Next.js automatically uses loading.tsx",
-      "Why skeleton UIs improve UX",
-      "How to simulate delay with setTimeout in async pages",
+      "How to use suspense-like placeholders",
+      "How to structure loading UX"
     ],
+    status: "done"
   },
   {
     day: 11,
     date: "2025-09-22",
     week: "Foundations II",
-    task: "Add shared SectionHeader component",
-    whatIDid:
-      "Created SectionHeader.tsx and replaced duplicated headings in all pages with reusable component.",
-    filesTouched: ["components/SectionHeader.tsx", "all page.tsx files"],
+    task: "Add shared section headers and components",
+    whatIDid: "Created SectionHeader component to unify layout of titles and descriptions across all pages.",
+    filesTouched: ["components/SectionHeader.tsx", "app/*/page.tsx"],
     learned: [
-      "How props pass data to components",
-      "Why DRY code matters for maintainability",
-      "How semantic HTML improves accessibility",
+      "How to reuse components for consistency",
+      "How to use props to control appearance"
     ],
+    status: "done"
   },
   {
     day: 10,
     date: "2025-09-21",
     week: "Foundations II",
-    task: "Wire Navbar links to all pages",
-    whatIDid:
-      "Expanded navLinks in Header.tsx to include all 11 routes. Used usePathname to highlight active link.",
-    filesTouched: ["components/Header.tsx"],
+    task: "Wire navigation links to all pages",
+    whatIDid: "Connected Navbar links to their routes and verified navigation flow.",
+    filesTouched: ["components/Navbar.tsx"],
     learned: [
-      "Difference between <a> and <Link> in Next.js",
-      "How to conditionally style active links",
-      "Why aria-current helps accessibility",
+      "How to handle active routes with usePathname",
+      "How to structure navigation"
     ],
+    status: "done"
   },
   {
     day: 9,
     date: "2025-09-20",
     week: "Foundations II",
-    task: "Add minimal content blocks",
-    whatIDid:
-      "Expanded placeholders with unique titles, descriptions, and stub buttons for each page.",
-    filesTouched: ["all new page.tsx files"],
+    task: "Add minimal content to each page",
+    whatIDid: "Populated each new page with simple headings and placeholder paragraphs.",
+    filesTouched: ["app/*/page.tsx"],
     learned: [
-      "How to make each page unique with minimal content",
-      "Why placeholder text helps navigation feel alive",
-      "Stub actions give visual anchors for later features",
+      "How to scaffold multiple pages quickly",
+      "How to ensure route consistency"
     ],
+    status: "done"
   },
   {
     day: 8,
     date: "2025-09-19",
     week: "Foundations II",
-    task: "Scaffold all pages (Welcome, Core, Gallery, Videos, Wealth, Abollo, Nexus, Thoughts, Visions, Vault, About)",
-    whatIDid:
-      "Created folders and page.tsx files for 10 new routes, each with a heading, paragraph, and stub button.",
-    filesTouched: [
-      "app/welcome/page.tsx",
-      "app/core/page.tsx",
-      "app/gallery/page.tsx",
-      "app/videos/page.tsx",
-      "app/wealth/page.tsx",
-      "app/abollo/page.tsx",
-      "app/nexus/page.tsx",
-      "app/thoughts/page.tsx",
-      "app/visions/page.tsx",
-      "app/vault/page.tsx",
-      "app/about/page.tsx",
-    ],
+    task: "Create core page structure for all sections",
+    whatIDid: "Created pages for Welcome, Core, Gallery, Videos, Wealth, Abollo, Nexus, Thoughts, Visions, Vault, and About.",
+    filesTouched: ["app/*/page.tsx"],
     learned: [
-      "How Next.js App Router maps folders to routes",
-      "Why scaffolding early prevents forgetting sections",
-      "Difference between Home route and other pages",
+      "How to scaffold pages in Next.js",
+      "How to define route-based page files"
     ],
+    status: "done"
   },
+
+  // Week 1 — Foundations I
   {
     day: 7,
     date: "2025-09-18",
     week: "Foundations I",
-    task: "Review & deploy",
-    whatIDid:
-      "Cleaned up Navbar and Footer, confirmed theme toggle works, tested accessibility, deployed to Vercel.",
-    filesTouched: [
-      "app/layout.tsx",
-      "components/Header.tsx",
-      "components/Footer.tsx",
-    ],
+    task: "Review & deploy first build",
+    whatIDid: "Reviewed layout, cleaned small issues, deployed to Vercel, verified build and links.",
+    filesTouched: ["layout.tsx", "components/Navbar.tsx", "Footer.tsx"],
     learned: [
-      "How to reflect at the end of a dev cycle",
-      "How small review days prevent big problems later",
-      "That deploy tests real-world performance",
+      "How to deploy Next.js apps to Vercel",
+      "How to verify layouts and responsive behavior"
     ],
+    status: "done"
   },
   {
     day: 6,
     date: "2025-09-17",
     week: "Foundations I",
-    task: "Light Tailwind polish for header/footer",
-    whatIDid:
-      "Added responsive spacing, typography tweaks, and hover effects for Navbar and Footer.",
-    filesTouched: ["components/Header.tsx", "components/Footer.tsx"],
+    task: "Light Tailwind polish for header and footer",
+    whatIDid: "Applied Tailwind styling to Navbar and Footer, ensuring color consistency and responsive spacing.",
+    filesTouched: ["components/Navbar.tsx", "components/Footer.tsx"],
     learned: [
-      "How Tailwind utility classes style components fast",
-      "Why consistent spacing makes UI feel polished",
-      "That small hover animations improve UX",
+      "How to use Tailwind utility classes effectively",
+      "How to style components responsively"
     ],
+    status: "done"
   },
   {
     day: 5,
     date: "2025-09-16",
     week: "Foundations I",
-    task: "Accessibility pass",
-    whatIDid:
-      "Added skip link, aria-current for nav, focus states, and screen reader labels.",
-    filesTouched: ["components/Header.tsx", "app/layout.tsx"],
+    task: "Add accessibility basics (skip links, ARIA, focus states)",
+    whatIDid: "Implemented skip-to-content link, added ARIA labels to nav links, verified focus visibility.",
+    filesTouched: ["components/Navbar.tsx", "layout.tsx"],
     learned: [
-      "What accessibility means in practice",
-      "How aria attributes help screen readers",
-      "Why keyboard navigation must be tested early",
+      "How to improve accessibility using ARIA roles",
+      "How to design for keyboard navigation"
     ],
+    status: "done"
   },
   {
     day: 4,
     date: "2025-09-15",
     week: "Foundations I",
     task: "Persist theme choice in localStorage",
-    whatIDid:
-      "Added a simple theme toggle that saves light/dark preference locally.",
-    filesTouched: ["components/Header.tsx"],
+    whatIDid: "Implemented ThemeToggle component that stores the theme (light/dark) in localStorage and applies it to <body>.",
+    filesTouched: ["components/ThemeToggle.tsx", "layout.tsx"],
     learned: [
-      "How to use localStorage in Next.js",
-      "What hydration errors are and how to avoid them",
-      "That persistence improves UX by remembering settings",
+      "How to use useEffect for side effects",
+      "How to persist state in localStorage"
     ],
+    status: "done"
   },
   {
     day: 3,
     date: "2025-09-14",
     week: "Foundations I",
-    task: "Client interactivity on Navbar",
-    whatIDid:
-      "Made Navbar highlight active route with usePathname, added hover/tap interactivity.",
-    filesTouched: ["components/Header.tsx"],
+    task: "Add interactivity to Navbar",
+    whatIDid: "Made Navbar interactive with hover and active link indicators using usePathname.",
+    filesTouched: ["components/Navbar.tsx"],
     learned: [
-      "What hooks are in React",
-      "How usePathname works in Next.js",
-      "Difference between static vs. interactive components",
+      "How to detect the active route in Next.js",
+      "How to add basic interactivity with hooks"
     ],
+    status: "done"
   },
   {
     day: 2,
     date: "2025-09-13",
     week: "Foundations I",
-    task: "Add shared Header and Footer",
-    whatIDid:
-      "Created Header.tsx with Navbar and Footer.tsx with basic layout. Added to root layout.",
-    filesTouched: [
-      "components/Header.tsx",
-      "components/Footer.tsx",
-      "app/layout.tsx",
-    ],
+    task: "Add shared layout with Navbar and Footer",
+    whatIDid: "Created global layout file and added Navbar and Footer to wrap around page content.",
+    filesTouched: ["layout.tsx", "components/Navbar.tsx", "components/Footer.tsx"],
     learned: [
-      "What a shared layout is in Next.js",
-      "How children get injected into layout",
-      "That components keep code reusable",
+      "How Next.js layouts work",
+      "How to compose reusable page structure"
     ],
+    status: "done"
   },
   {
     day: 1,
     date: "2025-09-12",
     week: "Foundations I",
-    task: "Create Next app, Git + Vercel",
-    whatIDid:
-      "Initialized Next.js app, pushed to GitHub, linked with Vercel, confirmed deployment works.",
-    filesTouched: ["package.json", "app/layout.tsx", "app/page.tsx"],
+    task: "Initialize Next.js app and push to Vercel",
+    whatIDid: "Created new Next.js project, initialized GitHub repo, deployed initial version to Vercel.",
+    filesTouched: ["package.json", "next.config.ts", "README.md"],
     learned: [
-      "How to bootstrap a Next.js project",
-      "Why Git is needed for version control",
-      "How Vercel auto-deploy works with GitHub",
+      "How to set up a Next.js app from scratch",
+      "How to deploy to Vercel"
     ],
-  },
+    status: "done"
+  }
 ];
