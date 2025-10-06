@@ -10,7 +10,7 @@ type LogEntryProps = {
   filesTouched: string[];
   link?: string;
   learned: string[];
-  status?: "done" | "in-progress" | "blocked";
+  status?: "done" | "in-progress" | "holded";
 };
 
 export default function LogEntry({
@@ -50,7 +50,7 @@ export default function LogEntry({
       ? "✅ Done"
       : status === "in-progress"
       ? "🕓 In Progress"
-      : "⚠️ Blocked"}
+      : "⚠️ Holded"}
   </span>
 )}
 
